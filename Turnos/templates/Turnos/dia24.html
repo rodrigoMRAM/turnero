@@ -1,0 +1,10 @@
+{%extends 'Turnos/index.html'%}
+{% block Cuerpo %}
+<p>Turnos disponibles</p>
+{{context24.hora}}
+{{context24.hora1}}
+{{context24.hora2}}
+{{context24.hora3}}
+{{context24.hora4}}
+<a href="{%url 'Inicio'%}">Volver</a>
+{% endblock %}
