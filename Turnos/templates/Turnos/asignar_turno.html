@@ -1,0 +1,18 @@
+{% extends 'Turnos/turnos.html' %}
+
+{% block Asignar %}
+  <div class="container flex">
+
+    <h2>Reserva de turno</h2>
+    <div class="cancelar">
+
+      <form method="post">
+        {% csrf_token %}
+        <p>¿Estás seguro de que quieres asignar el turno {{ turno }}
+          <button class="btn-red btn-margin" type="submit">Reservar</button>
+        </form>
+        {{texto}}
+      </div>
+    </div>
+    
+{% endblock Asignar %}

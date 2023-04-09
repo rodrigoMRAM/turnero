@@ -1,0 +1,15 @@
+{% extends 'Turnos/turnos.html' %}
+    {% load static %}
+    {% block Cancelar %}
+    <div class="container flex">
+        <div class="cancelar">
+            
+            <h2>Cancelar turno</h2>
+            <form method="post">
+                {% csrf_token %}
+                <p>¿Estás seguro de que quieres cancelar  el turno {{ turno }}
+                    <button class="btn-red btn-margin" type="submit">Cancelar turno</button>
+                </form>
+            </div>
+        </div>
+        {% endblock Cancelar %}

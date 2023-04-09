@@ -18,13 +18,12 @@
        <form method="post">
         {% csrf_token %}
         {{ form.media}}
-        {{ form| crispy}}
-
+        {% comment %} {{ form| crispy}} {% endcomment %}
+        {{ form.as_p}}
         <input class="btn btn-primary mt-2 ml-2" type="submit" value="Enviar"/>
 
 
         <p>
-            <a href="{% url 'List' %}">Regresar</a>
         </p>
        </form>
             

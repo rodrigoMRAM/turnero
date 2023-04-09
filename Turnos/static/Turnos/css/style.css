@@ -1,11 +1,17 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 .dia{
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    border: 1px solid black;
+    padding: 5px 15px 15px 15px;
     text-align: center;
-    width: 600px;
     flex-direction: column;
-    width: 400px;
+    width: 250px;
 
     color: red;
     z-index: 200;
@@ -13,7 +19,7 @@
 
 .primero{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .primero a{
 
@@ -21,9 +27,17 @@
 }
 .segundo{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
-.segundo a{
+.cuarto{
+    display: flex;
+    justify-content: space-between;
+}
+.tercero{
+    display: flex;
+    justify-content: space-between;
+}
+/* .segundo a{
     margin-left: 15px;
 }
 .tercero a{
@@ -31,21 +45,86 @@
 }
 .cuarto a{
     margin-left: 15px;
-}
+} */
 .semana{
     display: flex;
+    justify-content: space-between;
+    background-color: grey;
 }
 .semana p{
     margin: 0 auto;
-    margin-left: 20px;
+
 }
 h1{
+    margin-bottom: 50px;
     text-align: center;
     font-size: 80px;
+}
+h2{
+    margin-bottom: 30px;
 }
 li{
     display: flex;
     flex-direction: column;
     width: 300px;
     list-style: none;
+}
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+tbody td{
+    padding: 10px 40px;
+}
+.btn{
+    text-decoration: none;
+    padding: 5px 10px;
+    color: white;
+    background-color: rgb(25, 98, 255);
+
+}
+
+.btn-red{
+    text-decoration: none;
+    padding: 5px 10px;
+    color: white;
+    background-color: rgb(255, 72, 16);
+
+}
+.flex{
+    border: 50px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cancelar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    padding: 20px 20px;
+    text-align: center;
+    height: 300px;
+    border-radius: 20px;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
+}
+
+.btn-margin{
+    margin-top: 15px;
+}
+
+table{
+    border: 1px solid black;
+    border-radius: 30px;
 }

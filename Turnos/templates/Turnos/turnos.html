@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{%static 'Turnos/css/style.css'%}">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Listado de Turnos</h1>
+        <div class="dia">
+            <h3>Abril</h3>
+        <div class="semana">
+            <p>L</p>
+            <p>M</p>
+            <p>Mi</p>
+            <p>J</p>
+            <p>V</p>
+            <p>S</p>
+            <p>D</p>
+        </div>
+        <div class="primero">
+            <a class="1" href="{% url 'recolecta'%}">1</a>
+            <a class="2" href="">2</a>
+            <a class="3" href="">3</a>
+            <a class="4" href="">4</a>
+            <a class="5" href="">5</a>
+            <a class="6" href="">6</a>
+            <a class="7" href="">7</a>
+            
+        </div>
+        <div class="segundo">
+            <a class="8" href="">8</a>
+            <a class="9" href="">9</a>
+            <a class="10" href="">10</a>
+            <a class="11" href="">11</a>
+            <a class="12" href="">12</a>
+            <a class="13" href="">13</a>
+            <a class="14" href="">14</a>
+            
+        </div>
+        <div class="tercero">
+            <a class="15" href="">15</a>
+            <a class="16" href="">16</a>
+            <a class="17" href="">17</a>
+            <a class="18" href="">18</a>
+            <a class="19" href="">19</a>
+            <a class="20" href="">20</a>
+            <a class="21" href="">21</a>
+            <a class="22" href="">22</a>
+            
+        </div>
+        <div class="cuarto">
+            <a class="23" href="">23</a>
+            <a class="24" href="">24</a>
+        <a class="25" href="">25</a>
+        <a class="26" href="">26</a>
+        <a class="27" href="">27</a>
+        <a class="28" href="">28</a>
+        <a class="29" href="">29</a>
+        <a class="30" href="">30</a>
+    </div>
+        </div> 
+    
+    <div class="container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fin</th>
+                    <th>Asignado a</th>
+                    <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for turno in turnos %}
+          <tr>
+              <td>{{ turno.fecha }}</td>
+              <td>{{ turno.hora_inicio }}</td>
+              <td>{{ turno.hora_fin }}</td>
+              {% if turno.asignado_a %}
+              <td>{{ turno.asignado_a.username}}</td>
+              {% else %}
+              <td>Disponible</td>
+              {% endif %}
+              
+              <td>
+                  <form method="post">
+                      {% if turno.activo %}
+                <a class="btn"  href="{% url 'Asignar' turno.id %}">Asignar</a>
+                {% endif %}
+                {% if not turno.activo and turno.asignado_a.username == user.username%}
+                <a class="btn-red"href="{% url 'Eliminar' turno.id %}">Eliminar Reserva</a>
+                {% endif %}
+            </form>
+            </td>
+          </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No hay turnos disponibles</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% block Asignar %}
+    {% endblock Asignar %}
+    {% block Cancelar %}
+    {% endblock Cancelar %}
+
+</body>    
+</html>
+
+

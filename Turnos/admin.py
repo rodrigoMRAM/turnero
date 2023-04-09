@@ -1,6 +1,6 @@
 from django.contrib import admin
-from Turnos.models import Turnopedido
+from Turnos.models import Turno, Dia
 
-admin.site.register(Turnopedido)
-
+admin.site.register(Turno)
+admin.site.register(Dia)
 # Register your models here.
