@@ -1,0 +1,23 @@
+.flatpickr-calendar{
+    background-color: rgb(34, 34, 34)!important;
+}
+.flatpickr-day{
+    color: white!important;
+}
+.flatpickr-current-month{
+    color: white!important;
+}
+.flatpickr-weekday{
+    color: white!important;
+}
+.flatpickr-next-month svg{
+    color: white!important;
+    fill: white!important;
+}
+.flatpickr-prev-month svg{
+    color: white!important;
+    fill: white!important;
+}
+.nextMonthDay, .prevMonthDay{
+    color: gray!important;
+}

@@ -7,6 +7,8 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from urllib import request
+from django.views import generic
+from Turnos.forms import ToDoForm
 
 def saludo(request):
     midato = Turnopedido.objects.all()
@@ -152,3 +154,8 @@ class Turnopedidolist(ListView):
 
     model = Turnopedido
     Template_name = "Turnos/dias_list.html"
+
+
+class CustomFormView(generic.FormView):
+    template_name = "Turnos/custom-form.html"
+    form_class = ToDoForm

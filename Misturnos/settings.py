@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Turnos.apps.TurnosConfig'
+    'Turnos.apps.TurnosConfig',
+    "django_flatpickr",
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
