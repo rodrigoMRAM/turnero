@@ -200,7 +200,8 @@ def eliminar_reserva(request, id):
             turno.asignado_a = None
             turno.activo = True
             turno.save()
-            render(request,'Turnos/confirm_delete_reserve.html')
+            mensaje = "Se elimino correctamente"
+            render(request,'Turnos/confirm_delete_reserve.html' )
         else:
             messages.warning(request, f'El turno {turno} ya está asignado a {turno.asignado_a.username}')
         return redirect('Listar')
@@ -208,6 +209,15 @@ def eliminar_reserva(request, id):
 
 
 
-def recolectando(request):
-    turno = Turno.objects.filter(fecha__startswith="10")
-    return render(request ,'Turnos/filtro.html', {"turno":turno})
+def recolectando(request, id):
+    horaInicio=  Turno.objects.filter(fecha__startswith=id)
+    return render(request ,'Turnos/filtro.html' , {"horaInicio": horaInicio})
+# , {"turno":turno}
+
+def prueba(request):
+    lista = ["09" , "10", "12", "14"]
+    dias = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
+    for l in dias:
+        for x in range(4):
+            h=  Turno(fecha=f"2023-04-{l}",hora_inicio=lista[x], hora_fin="20", asignado_a=None, activo=True)
+            h.save()

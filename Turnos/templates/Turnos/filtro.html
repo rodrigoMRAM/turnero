@@ -1,14 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for x in turno  %}
-    {{x}}
-    {% endfor %}
-</body>
-</html>
+ {% extends 'Turnos/turnos.html' %}
+ {% block Turnos %}
+{% load static %}
+ <div class="container filtroDiv">
+     
+        <table cellspacing="0">
+            <thead>
+                <tr class="topLista">
+                    <th>Fecha</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fin</th>
+                    <th>Asignado a</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for turno in horaInicio %}
+                <tr>
+                    <td>{{ turno.fecha }}</td>
+                    <td>{{ turno.hora_inicio }}</td>
+                    <td>{{ turno.hora_fin }}</td>
+                    {% if turno.asignado_a %}
+                    <td>{{ turno.asignado_a.username}}</td>
+                    {% else %}
+                    <td>Disponible</td>
+                    {% endif %}
+                    
+                    <td>
+                        <form method="post">
+                            {% if turno.activo %}
+                            <a class="btn"  href="{% url 'Asignar' turno.id %}">Reservar</a>
+                            {% endif %}
+                            {% if not turno.activo and turno.asignado_a.username == user.username%}
+                            <a class="btn-red"href="{% url 'Eliminar' turno.id %}">Eliminar Reserva</a>
+                            {% endif %}
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No hay turnos disponibles</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock Turnos %}
+    

@@ -8,34 +8,43 @@
     justify-content: center;
     margin: 0 auto;
     border: 1px solid black;
-    padding: 5px 15px 15px 15px;
+    border-radius: 5px;
+    padding: 15px 15px 25px 15px;
     text-align: center;
     flex-direction: column;
     width: 250px;
-
-    color: red;
+    background-color: black;
+    color: white;
     z-index: 200;
+}
+.dia a{
+    color: white;
+    text-decoration: none;
 }
 
 .primero{
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
 }
 .primero a{
-
+    text-decoration: none;
     margin-left: 20px;
 }
 .segundo{
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
 }
 .cuarto{
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
 }
 .tercero{
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
 }
 /* .segundo a{
     margin-left: 15px;
@@ -126,5 +135,35 @@ tbody td{
 
 table{
     border: 1px solid black;
-    border-radius: 30px;
+    border-radius: 5px;
 }
+
+.topLista{
+    padding: 5px 0;
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    text-align: left;
+
+}
+
+.flex ul{
+    display: flex;
+    flex-direction: row;
+
+}
+ul li{
+    width: 200px;
+}
+.tabla{
+    width: 800px;
+}
+.filtroDiv th{
+    padding-left: 5px;
+}
+tr:nth-child(2), tr:nth-child(4){
+    background-color: rgb(238, 238, 238);
+}
+
+

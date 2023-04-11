@@ -44,5 +44,6 @@ urlpatterns = [
         path('', listar_turnos, name="Listar"),
         path('asignar/<id>/', asignar_turno, name="Asignar"),
         path('eliminar/<id>/', eliminar_reserva, name="Eliminar"),
-        path('recolectando/', recolectando, name="recolecta")
+        path('recolectando/<id>', recolectando, name="recolecta"),
+        path('prueba/', prueba, name="prueba")
 ]

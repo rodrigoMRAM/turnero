@@ -1,0 +1,43 @@
+<div class="container">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Hora Inicio</th>
+                <th>Hora Fin</th>
+                <th>Asignado a</th>
+                <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for turno in turnos %}
+      <tr>
+          <td>{{ turno.fecha }}</td>
+          <td>{{ turno.hora_inicio }}</td>
+          <td>{{ turno.hora_fin }}</td>
+          {% if turno.asignado_a %}
+          <td>{{ turno.asignado_a.username}}</td>
+          {% else %}
+          <td>Disponible</td>
+          {% endif %}
+          
+          <td>
+              <form method="post">
+                  {% if turno.activo %}
+            <a class="btn"  href="{% url 'Asignar' turno.id %}">Asignar</a>
+            {% endif %}
+            {% if not turno.activo and turno.asignado_a.username == user.username%}
+            <a class="btn-red"href="{% url 'Eliminar' turno.id %}">Eliminar Reserva</a>
+            {% endif %}
+        </form>
+        </td>
+      </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">No hay turnos disponibles</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+</div>

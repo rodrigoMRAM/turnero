@@ -27,7 +27,7 @@ class Turno(models.Model):
     activo = models.BooleanField(default=True)
 
     def __str__(self):
-        return f'Turno {self.fecha} {self.hora_inicio} - {self.hora_fin}'
+        return f'{self.fecha} {self.hora_inicio} - {self.hora_fin}'
     
 
 class Dia(models.Model):
