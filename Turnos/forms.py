@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
 from django_flatpickr.widgets import DatePickerInput, TimePickerInput, DateTimePickerInput
 
 
@@ -24,3 +25,10 @@ class AgregarDias(forms.Form):
     hora3 = forms.IntegerField()
     hora4 = forms.IntegerField()
     clase = forms.IntegerField()
+
+
+class CustomAuthenticationForm(AuthenticationForm):
+    def __init__(self, request=None, *args, **kwargs):
+        super().__init__(request=None, *args, **kwargs)
+        self.fields['username'].label = 'Usuario'
+        self.fields['password'].label = 'Contraseña'

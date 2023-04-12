@@ -1,78 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        {% load static %}
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{%static 'Turnos/css/style.css'%}">
-        <title>Document</title>
-    </head>
-    <body>
+{% extends "Turnos/index.html" %}
+{% load static %}
+    {% block Turnos %}
+
         <h1>Listado de Turnos</h1>
         <div class="dia">
-            <h3>Abril</h3>
-        <div class="semana">
-            <p>Lu</p>
-            <p>Ma</p>
-            <p>Mi</p>
-            <p>Ju</p>
-            <p>Vi</p>
-            <p>Sa</p>
-            <p>Do</p>
-        </div>
-        <div class="primero">
-            <a class="1" href="{% url 'recolecta' "2023-04-01"%}">1</a>
-            <a class="2" href="{% url 'recolecta' "2023-04-02"%}">2</a>
-            <a class="3" href="{% url 'recolecta' "2023-04-03"%}">3</a>
-            <a class="4" href="{% url 'recolecta' "2023-04-04"%}">4</a>
-            <a class="5" href="{% url 'recolecta' "2023-04-05"%}">5</a>
-            <a class="6" href="{% url 'recolecta' "2023-04-06"%}">6</a>
-            <a class="7" href="{% url 'recolecta' "2023-04-07"%}">7</a>
-            
-        </div>
-        <div class="segundo">
-            <a class="8" href="{% url 'recolecta' "2023-04-08"%}">8</a>
-            <a class="9" href="{% url 'recolecta' "2023-04-09"%}">9</a>
-            <a class="10" href="{% url 'recolecta' "2023-04-10"%}">10</a>
-            <a class="11" href="{% url 'recolecta' "2023-04-11"%}">11</a>
-            <a class="12" href="{% url 'recolecta' "2023-04-12"%}">12</a>
-            <a class="13" href="{% url 'recolecta' "2023-04-13"%}">13</a>
-            <a class="14" href="{% url 'recolecta' "2023-04-14"%}">14</a>
-            
-        </div>
-        <div class="tercero">
-            <a class="15" href="{% url 'recolecta' "2023-04-15"%}">15</a>
-            <a class="16" href="{% url 'recolecta' "2023-04-16"%}">16</a>
-            <a class="17" href="{% url 'recolecta' "2023-04-17"%}">17</a>
-            <a class="18" href="{% url 'recolecta' "2023-04-18"%}">18</a>
-            <a class="19" href="{% url 'recolecta' "2023-04-19"%}">19</a>
-            <a class="20" href="{% url 'recolecta' "2023-04-20"%}">20</a>
-            <a class="21" href="{% url 'recolecta' "2023-04-21"%}">21</a>
-            <a class="22" href="{% url 'recolecta' "2023-04-22"%}">22</a>
-            
-        </div>
-        <div class="cuarto">
-            <a class="23" href="{% url 'recolecta' "2023-04-23"%}">23</a>
-            <a class="24" href="{% url 'recolecta' "2023-04-24"%}">24</a>
-        <a class="25" href="{% url 'recolecta' "2023-04-25"%}">25</a>
-        <a class="26" href="{% url 'recolecta' "2023-04-26"%}">26</a>
-        <a class="27" href="{% url 'recolecta' "2023-04-27"%}">27</a>
-        <a class="28" href="{% url 'recolecta' "2023-04-28"%}">28</a>
-        <a class="29" href="{% url 'recolecta' "2023-04-29"%}">29</a>
-        <a class="30" href="{% url 'recolecta' "2023-04-30"%}">30</a>
-    </div>
+                <h3>Abril</h3>
+            <div class="semana">
+                <p>Lu</p>
+                <p>Ma</p>
+                <p>Mi</p>
+                <p>Ju</p>
+                <p>Vi</p>
+                <p>Sa</p>
+                <p>Do</p>
+            </div>
+            <div class="primero">
+                <a class="1" href="{% url 'recolecta' "2023-04-01"%}">1</a>
+                <a class="2" href="{% url 'recolecta' "2023-04-02"%}">2</a>
+                <a class="3" href="{% url 'recolecta' "2023-04-03"%}">3</a>
+                <a class="4" href="{% url 'recolecta' "2023-04-04"%}">4</a>
+                <a class="5" href="{% url 'recolecta' "2023-04-05"%}">5</a>
+                <a class="6" href="{% url 'recolecta' "2023-04-06"%}">6</a>
+                <a class="7" href="{% url 'recolecta' "2023-04-07"%}">7</a>
+                
+            </div>
+            <div class="segundo">
+                <a class="8" href="{% url 'recolecta' "2023-04-08"%}">8</a>
+                <a class="9" href="{% url 'recolecta' "2023-04-09"%}">9</a>
+                <a class="10" href="{% url 'recolecta' "2023-04-10"%}">10</a>
+                <a class="11" href="{% url 'recolecta' "2023-04-11"%}">11</a>
+                <a class="12" href="{% url 'recolecta' "2023-04-12"%}">12</a>
+                <a class="13" href="{% url 'recolecta' "2023-04-13"%}">13</a>
+                <a class="14" href="{% url 'recolecta' "2023-04-14"%}">14</a>
+                
+            </div>
+            <div class="tercero">
+                <a class="15" href="{% url 'recolecta' "2023-04-15"%}">15</a>
+                <a class="16" href="{% url 'recolecta' "2023-04-16"%}">16</a>
+                <a class="17" href="{% url 'recolecta' "2023-04-17"%}">17</a>
+                <a class="18" href="{% url 'recolecta' "2023-04-18"%}">18</a>
+                <a class="19" href="{% url 'recolecta' "2023-04-19"%}">19</a>
+                <a class="20" href="{% url 'recolecta' "2023-04-20"%}">20</a>
+                <a class="21" href="{% url 'recolecta' "2023-04-21"%}">21</a>
+                <a class="22" href="{% url 'recolecta' "2023-04-22"%}">22</a>
+                
+            </div>
+            <div class="cuarto">
+                <a class="23" href="{% url 'recolecta' "2023-04-23"%}">23</a>
+                <a class="24" href="{% url 'recolecta' "2023-04-24"%}">24</a>
+                <a class="25" href="{% url 'recolecta' "2023-04-25"%}">25</a>
+                <a class="26" href="{% url 'recolecta' "2023-04-26"%}">26</a>
+                <a class="27" href="{% url 'recolecta' "2023-04-27"%}">27</a>
+                <a class="28" href="{% url 'recolecta' "2023-04-28"%}">28</a>
+                <a class="29" href="{% url 'recolecta' "2023-04-29"%}">29</a>
+                <a class="30" href="{% url 'recolecta' "2023-04-30"%}">30</a>
+            </div>
         </div> 
+        <div class="container"><p style="font-size: 30px">{{mensaje}}</p></div>
+
+        
+
+    {% endblock Turnos %}
     
-
-
-{% block Asignar %}
-    {% endblock Asignar %}
-    {% block Cancelar %}
-    {% endblock Cancelar %}
-    {% block Turnos %}{% endblock Turnos %}
-
-</body>    
-</html>
-
-

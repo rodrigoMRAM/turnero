@@ -1,9 +1,10 @@
 
 from django.contrib import messages
 from django.shortcuts import render
+from django.contrib.auth.views import LoginView, LogoutView
 from django.http import HttpResponse
 from Turnos.models import Turno
-from Turnos.forms import AgregarDias
+from Turnos.forms import AgregarDias, CustomAuthenticationForm
 from django.views.generic.edit import DeleteView
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
@@ -20,7 +21,15 @@ from Turnos.forms import ToDoForm
 #         nuevoDia = Turnopedido(dia= a,hora=10,hora1=11,hora2=12,hora3=13 ,hora4=14, clase= a)
 #         nuevoDia.save()
 
+def inicio(request):
+    return render(request, 'Turnos/index.html')
+class PanelLogin(LoginView):
+    template_name = "Turnos/turnos_login.html"
+    next_page = reverse_lazy("Listar")
+    authentication_form = CustomAuthenticationForm
 
+class PanelLogout(LogoutView):
+    template_name = 'Turnos/turnos.html'
 # def day0(request):
 #     midato = Turnopedido.objects.all()
 #     context0 = Turnopedido.objects.all()[0]
@@ -189,7 +198,7 @@ def asignar_turno(request, id):
             # messages.success(request, f'Turno {turno} asignado a {request.user.username}')
         else:
             messages.warning(request, f'El turno {turno} ya está asignado a {turno.asignado_a.username}')
-        return redirect('Listar')
+        return render(request, 'Turnos/turnos.html', {"mensaje": "Se realizo la reserva correctamente"})
     return render(request, 'Turnos/asignar_turno.html', {'turno': turno})
 
 
@@ -203,8 +212,8 @@ def eliminar_reserva(request, id):
             mensaje = "Se elimino correctamente"
             render(request,'Turnos/confirm_delete_reserve.html' )
         else:
-            messages.warning(request, f'El turno {turno} ya está asignado a {turno.asignado_a.username}')
-        return redirect('Listar')
+            messages.warning(request, f'El turno {turno} ya está asignado ')
+        return render(request, 'Turnos/turnos.html', {"mensaje": "Se eliminó la reserva correctamente"})
     return render(request, 'Turnos/confirm_delete_reserve.html', {'turno': turno})
 
 
@@ -221,3 +230,6 @@ def prueba(request):
         for x in range(4):
             h=  Turno(fecha=f"2023-04-{l}",hora_inicio=lista[x], hora_fin="20", asignado_a=None, activo=True)
             h.save()
+
+
+

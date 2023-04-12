@@ -1,0 +1,23 @@
+{% extends "Turnos/index.html" %}
+{% load static %}
+{% block Login %}
+
+
+
+    <div class="login">
+        <h1 class="ingresarh1">Ingresar Usuario</h1>
+      
+        <div class="form2">
+      
+          <form action="" method="POST">{% csrf_token %}
+            <ul>
+                {{form.as_table}}
+        </ul>
+        <button class="boton botonEntrar" type="submit">Entrar</button>
+      
+        </div>
+        </form>
+    </div>
+    <script src="{% static 'Turnos/js/login.js' %}"></script>
+      
+ {% endblock Login %}

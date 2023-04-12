@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{%static 'Turnos/css/navbar.css'%}">
+        <link rel="stylesheet" href="{%static 'Turnos/css/style.css'%}">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+              <h2>Navbar</h2>
+            </div>
+            <ul class="links">
+              <li><a href="#">home</a></li>
+              <li><a href="#">link 1</a></li>
+              <li><a href="#">link 2</a></li>
+              <li><a href="#">link 3</a></li>
+            </ul>
+            <div class="right">
+                {% if request.user.is_authenticated %}
+            <a class="boton" href="{% url 'panel-logout' %}">Cerrar sesión</a>
+            {%endif%}
+            
+            {% if not request.user.is_authenticated %}
+            <a class="boton" href="{% url 'panel-login' %}">Iniciar sesion</a>
+            {%endif%}
+        </div>
+            <div class="toggle">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+        </div>
+        {% block Turnos %}{% endblock Turnos %}
+        {% block Asignar %}
+        {% endblock Asignar %}
+        {% block Login %}{% endblock Login %}
+        
+        {% block Cancelar %}
+        {% endblock Cancelar %}
+        {% block Lista %}{% endblock Lista %}
+        <script src="{% static 'Turnos/js/navbar.js' %}"></script>
+    </body>    
+</html>
+
+
