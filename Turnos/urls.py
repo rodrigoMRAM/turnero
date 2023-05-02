@@ -41,12 +41,13 @@ urlpatterns = [
         # path('turnopedidolist/', Turnopedidolist.as_view(), name='List'),
 
         # path('agregar/' ,addDays, name="addDays")
-        path("", inicio, name="inicio"),
-        path('listar/', listar_turnos, name="Listar"),
+        path("inicio/", inicio, name="inicio"),
+        path("", listar_turnos, name="Listar"),
         path('asignar/<id>/', asignar_turno, name="Asignar"),
         path('eliminar/<id>/', eliminar_reserva, name="Eliminar"),
         path('recolectando/<id>', recolectando, name="recolecta"),
         path('prueba/', prueba, name="prueba"),
         path("login/", PanelLogin.as_view(), name="panel-login"),
         path("logout/", PanelLogout.as_view(), name="panel-logout"),
+        path("misTurnos/" , misTurnos, name="misTurnos")
 ]

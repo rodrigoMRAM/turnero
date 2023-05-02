@@ -191,14 +191,17 @@ def asignar_turno(request, id):
             turno.activo = False
             turno.save()
             context={
-                "texto" : "Turno {turno} asignado a {request.user.username}"
+                "texto" : f"Turno {turno} asignado a {request.user.username}"
             }
             print(context['texto'])
             render(request,'Turnos/asignar_turno.html', context)
             # messages.success(request, f'Turno {turno} asignado a {request.user.username}')
         else:
             messages.warning(request, f'El turno {turno} ya está asignado a {turno.asignado_a.username}')
-        return render(request, 'Turnos/turnos.html', {"mensaje": "Se realizo la reserva correctamente"})
+            context={
+                "texto" : "Turno {turno} asignado a {request.user.username}"
+            }
+        return render(request, 'Turnos/turnos.html', {"mensaje": "Se realizo la reserva correctamente", "context":context})
     return render(request, 'Turnos/asignar_turno.html', {'turno': turno})
 
 
@@ -220,8 +223,19 @@ def eliminar_reserva(request, id):
 
 def recolectando(request, id):
     horaInicio=  Turno.objects.filter(fecha__startswith=id)
-    return render(request ,'Turnos/filtro.html' , {"horaInicio": horaInicio})
+    contador = 0
+    for e in Turno.objects.all():
+        print(e.asignado_a)
+        if e.asignado_a == request.user:
+            contador += 1
+    print(contador)
+    return render(request ,'Turnos/filtro.html' , {"horaInicio": horaInicio, "contador": contador})
 # , {"turno":turno}
+def misTurnos(request):
+    miTurno = Turno.objects.filter(asignado_a=request.user)
+    return render(request, "Turnos/misTurnos.html" , {"miTurno": miTurno})
+
+
 
 def prueba(request):
     lista = ["09" , "10", "12", "14"]
