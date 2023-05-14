@@ -4,10 +4,10 @@ from django.shortcuts import render
 from django.contrib.auth.views import LoginView, LogoutView
 from django.http import HttpResponse
 from Turnos.models import Turno
-from Turnos.forms import AgregarDias, CustomAuthenticationForm
+from Turnos.forms import AgregarDias, CustomAuthenticationForm , UserRegisterForm
 from django.views.generic.edit import DeleteView
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView ,UpdateView
 from django.urls import reverse_lazy
 from urllib import request
 from django.views import generic
@@ -247,3 +247,46 @@ def prueba(request):
 
 
 
+#Usuarios
+from django.contrib.auth.models import User
+from django.views.generic.detail import DetailView
+
+def register(request):
+    
+    if request.method == 'POST': 
+        form = UserRegisterForm(request.POST)
+    
+        if form.is_valid():            
+            username = form.cleaned_data ["username"]
+            form.save()
+            return render (request, "Turnos/crearUsuario.html",{"mensaje":f"{username}, Usuario Creado :)"})
+    
+    else: 
+        form = UserRegisterForm()
+       
+    return render (request, "Turnos/crearUsuario.html" , {"form" : form})
+
+
+
+class UserList(ListView):
+
+    model = User
+    Template_name = "Turnos/user_list.html"
+
+class UserList(ListView):
+
+    model = User
+    Template_name = "Turnos/user_list.html"
+    
+  
+
+class UserDetalle(DetailView):
+
+    model = User
+    template_name ="Turnos/detalleUsuario.html"
+
+class UserUpdate(UpdateView):
+
+    model = User
+    success_url = "/userlist/"
+    fields = ['username', 'email', 'last_name', 'first_name']

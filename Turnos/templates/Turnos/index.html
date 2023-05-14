@@ -15,10 +15,12 @@
               <h2>Turnos</h2>
             </div>
             <ul class="links">
-              <li><a href="#">home</a></li>
+              <li><a href="/">home</a></li>
               <li><a href="#">link 1</a></li>
-              <li><a href="#">link 2</a></li>
+              {% if request.user.is_authenticated %}
               <li><a href={% url 'misTurnos'  %}>Mis turnos</a><p></p></li>
+              {%endif%}
+              <li><a href={% url 'register'%}>Crear usuario</a></li>
             </ul>
             <div class="right">
                 {% if request.user.is_authenticated %}

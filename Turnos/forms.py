@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django_flatpickr.widgets import DatePickerInput, TimePickerInput, DateTimePickerInput
+from django.contrib.auth.models import User
 
 
 class ToDoForm(forms.Form):
@@ -32,3 +33,19 @@ class CustomAuthenticationForm(AuthenticationForm):
         super().__init__(request=None, *args, **kwargs)
         self.fields['username'].label = 'Usuario'
         self.fields['password'].label = 'Contraseña'
+
+from django.contrib.auth.forms import UserCreationForm
+
+class UserRegisterForm (UserCreationForm): 
+    username = forms.CharField(label="Usuario",max_length=10)
+    email = forms.EmailField ()
+    password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput)
+    password2 = forms.CharField(label= "Repetir la contraseña", widget=forms.PasswordInput) 
+    
+    last_name = forms.CharField(label="Nombre")
+    first_name= forms.CharField(label="Apellido")
+
+    class Meta: 
+      model = User 
+      fields = ["username", "email", "password1", "password2", "last_name", "first_name"]
+      help_texts = {k:"" for k in fields}

@@ -1,0 +1,19 @@
+{% extends 'Turnos/index.html' %}
+{% load static %}
+{% block Login %}
+
+<h1 class="h3 mb-3 fw-normal">Crear Usuario</h1>
+
+        
+
+<div class="form3">
+    <form action="" method= "POST">{% csrf_token %}
+                    {{form.as_table}}
+                <p style="color:green"><b>{{mensaje}}</b></p>
+            <button class="botoningresar boton botonCrearUsuario" type="submit">Crear Usuario</button>
+        </form> 
+        
+    </div>
+
+
+{% endblock Login %}

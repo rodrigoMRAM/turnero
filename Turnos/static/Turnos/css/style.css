@@ -112,7 +112,9 @@ tbody td{
     align-items: center;
     flex-direction: column;
 }
-
+a:active {
+    background-color: #ff0000;
+  }
 .cancelar{
     display: flex;
     flex-direction: column;
@@ -221,4 +223,21 @@ form ul{
     padding-top: 30px;
     height: 100vh;
     background-color: #f1f1f1;
+}
+
+.form3{
+    display: flex;
+    background-color: #252424;
+    color: white;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+}
+.botonCrearUsuario{
+    margin-top: 30px;
 }
