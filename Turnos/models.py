@@ -33,7 +33,7 @@ class Turno(models.Model):
 class Dia(models.Model):
     dia = models.CharField(max_length=10)
     horario1 = models.ForeignKey(Turno,on_delete=models.DO_NOTHING)
-    horario1 = models.ForeignKey(Turno,on_delete=models.DO_NOTHING)
+
     
 
 

@@ -16,7 +16,7 @@
             </div>
             <ul class="links">
               <li><a href="/">home</a></li>
-              <li><a href="#">link 1</a></li>
+              {% comment %} <li><a href="#">link 1</a></li> {% endcomment %}
               {% if request.user.is_authenticated %}
               <li><a href={% url 'misTurnos'  %}>Mis turnos</a><p></p></li>
               {%endif%}

@@ -85,9 +85,12 @@ li{
     align-items: center;
     margin-top: 50px;
 }
-tbody td{
-    padding: 10px 40px;
+.mensaje{
+    flex-direction: column;
 }
+/* tbody td{
+    padding: 10px 40px;
+} */
 .btn{
     text-decoration: none;
     padding: 5px 10px;
@@ -164,9 +167,13 @@ ul li{
 .filtroDiv th{
     padding-left: 5px;
 }
-tr:nth-child(2), tr:nth-child(4){
-    background-color: rgb(238, 238, 238);
+.filtroDiv table{
+    height: 300px;
 }
+
+/* tr:nth-child(2), tr:nth-child(4){
+    background-color: rgb(238, 238, 238);
+} */
 
 
 .form2{
@@ -218,7 +225,7 @@ form ul{
 }
 
 .alter{
-    width: 800px;
+    width: 100%;
     margin: 0 auto;
     padding-top: 30px;
     height: 100vh;
@@ -240,4 +247,67 @@ form ul{
 }
 .botonCrearUsuario{
     margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap ;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+}
+#calendar{
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+td a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+.botones{
+    display: flex;
+    padding-top: 10px;
+    width: 80%;
+    justify-content: space-between;
+
+}
+#prevButton, #nextButton{
+    border: none;
+    color: white;
+    font-size: 25px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #ffc600;
+    cursor: pointer;
+}
+.mitabla caption{
+    font-size: 20px!important;
+    font-weight: bold!important;
+    padding-bottom: 10px!important;
+}
+.contenedorgral{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width:600px){
+    .cancelar{
+        width: 100%;
+    }
 }
