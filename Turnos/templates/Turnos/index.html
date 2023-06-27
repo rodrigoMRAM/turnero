@@ -20,7 +20,9 @@
               {% if request.user.is_authenticated %}
               <li><a href={% url 'misTurnos'  %}>Mis turnos</a><p></p></li>
               {%endif%}
+              {% if not request.user.is_authenticated %}
               <li><a href={% url 'register'%}>Crear usuario</a></li>
+              {%endif%}
             </ul>
             <div class="right">
                 {% if request.user.is_authenticated %}

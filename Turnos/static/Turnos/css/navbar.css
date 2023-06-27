@@ -183,6 +183,9 @@ section {
     transform: translateX(-50%);
     z-index: 45;
   }
+  .right{
+    transform: translateX(50%)!important;
+  }
   .navbar.collapsed ~ main {
     filter: blur(1px);
     opacity: 0.8;
