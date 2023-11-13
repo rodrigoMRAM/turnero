@@ -6,7 +6,7 @@ from Turnos.views import *
 urlpatterns = [
          path('admin/', admin.site.urls),
         path('inicio/',CustomFormView.as_view(), name="Formulario"),
-        path("inicio/", inicio, name="inicio"),
+        # path("inicio/", inicio, name="inicio"),
         path("", listar_turnos, name="Listar"),
         path('asignar/<id>/', asignar_turno, name="Asignar"),
         path('eliminar/<id>/', eliminar_reserva, name="Eliminar"),

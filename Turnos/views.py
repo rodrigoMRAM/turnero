@@ -22,7 +22,8 @@ from Turnos.forms import ToDoForm
 #         nuevoDia.save()
 
 def inicio(request):
-    return render(request, 'Turnos/index.html')
+    miTurno = Turno.objects.filter(asignado_a=request.user)
+    return render(request, 'Turnos/index.html', {"miTurno": miTurno})
 class PanelLogin(LoginView):
     template_name = "Turnos/turnos_login.html"
     next_page = reverse_lazy("Listar")
@@ -174,14 +175,16 @@ class CustomFormView(generic.FormView):
 
 
 
-
+# PAGINA PRINCIPAL, CALENDARIO
 def listar_turnos(request):
     turnos = Turno.objects.all().order_by('fecha', 'hora_inicio')
-    return render(request, 'Turnos/turnos.html', {'turnos': turnos})
+    miTurno = Turno.objects.filter(asignado_a=request.user)
+    return render(request, 'Turnos/turnos.html', {'turnos': turnos, "miTurno": miTurno})
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
+# FUNCION DE ASIGNAR UN TURNO
 @login_required
 def asignar_turno(request, id):
     turno = get_object_or_404(Turno, pk=id)
@@ -204,7 +207,7 @@ def asignar_turno(request, id):
         return render(request, 'Turnos/turnos.html', {"mensaje": "Se realizo la reserva correctamente", "context":context})
     return render(request, 'Turnos/asignar_turno.html', {'turno': turno})
 
-
+# ELIMINAR RESERVA
 def eliminar_reserva(request, id):
     turno = get_object_or_404(Turno, pk= id)
     if request.method == 'POST':
@@ -236,13 +239,13 @@ def misTurnos(request):
     return render(request, "Turnos/misTurnos.html" , {"miTurno": miTurno})
 
 
-
+# CREACION MANUAL DE DIAS EN LA BASE DE DATOS
 def prueba(request):
     lista = ["09" , "10", "12", "14"]
-    dias = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
+    dias = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
     for l in dias:
         for x in range(4):
-            h=  Turno(fecha=f"2023-07-{l}",hora_inicio=lista[x], hora_fin="20", asignado_a=None, activo=True)
+            h=  Turno(fecha=f"2023-11-{l}",hora_inicio=lista[x], hora_fin="20", asignado_a=None, activo=True)
             h.save()
 
 

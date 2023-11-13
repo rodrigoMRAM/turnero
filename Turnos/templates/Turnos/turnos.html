@@ -1,5 +1,7 @@
 {% extends "Turnos/index.html" %}
 {% load static %}
+<link rel="stylesheet" href="{%static 'Turnos/css/navbar.css'%}">
+<link rel="stylesheet" href="{%static 'Turnos/css/style.css'%}">
     {% block Turnos %}
     <div class="contenedorgral">
         <h1>Sistema de Turnos</h1>
@@ -15,7 +17,6 @@
         </div>
         <div class="container mensaje"><p style="font-size: 30px">{{mensaje}}</p>
             <p>
-                
                 {{context.texto}}
             </p>
         

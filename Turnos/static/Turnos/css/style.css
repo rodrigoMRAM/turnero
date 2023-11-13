@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'DM Sans', sans-serif;
 }
 .dia{
     display: flex;
@@ -88,9 +89,9 @@ li{
 .mensaje{
     flex-direction: column;
 }
-/* tbody td{
-    padding: 10px 40px;
-} */
+.tbodyTurnos td{
+    padding: 10px 40px!important;
+}
 .btn{
     text-decoration: none;
     padding: 5px 10px;
@@ -104,6 +105,7 @@ li{
     padding: 5px 10px;
     color: white;
     background-color: rgb(255, 72, 16);
+    border-radius: 10px;
 
 }
 .flex{
@@ -128,7 +130,7 @@ a:active {
     text-align: center;
     height: 300px;
     border-radius: 20px;
-    background-color: #ffc600;
+    background-color: #fff400;
     box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
 -webkit-box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
@@ -151,6 +153,9 @@ table{
     font-weight: 100;
     text-align: left;
 
+}
+.right{
+    width: 200px;
 }
 
 .flex ul{
@@ -289,11 +294,11 @@ td a{
 }
 #prevButton, #nextButton{
     border: none;
-    color: white;
+    color: black;
     font-size: 25px;
     width: 30px;
     border-radius: 50%;
-    background-color: #ffc600;
+    background-color: #fff400;
     cursor: pointer;
 }
 .mitabla caption{
@@ -310,4 +315,33 @@ td a{
     .cancelar{
         width: 100%;
     }
+}
+.turnoReservado{
+    width: 30px;
+    color: blue;
+    border-radius: 50%!important;
+    background-color: #fff400;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.containerEliminar{
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.eliminarReserva{
+    display: flex;
+    background-color: yellow;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px;
+}
+.eliminarReserva p{
+    font-weight:400 ;
 }

@@ -1,4 +1,11 @@
-const formcontrol = document.querySelector(".form-control")
+window.addEventListener("load",()=>{
+    const controlador = document.querySelector(".form-control")
+    controlador.addEventListener("click",()=>{
+        console.log(controlador.value)
+    })
 
-    console.log(formcontrol)
+})
+
+
+
 

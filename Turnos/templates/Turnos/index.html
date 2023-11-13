@@ -18,7 +18,11 @@
               <li><a href="/">home</a></li>
               {% comment %} <li><a href="#">link 1</a></li> {% endcomment %}
               {% if request.user.is_authenticated %}
-              <li><a href={% url 'misTurnos'  %}>Mis turnos</a><p></p></li>
+              <li><a href={% url 'misTurnos'  %}>Mis turnos</a><p class="turnoReservado">
+                {% if miTurno %}
+                1
+                </p>{% endif %}
+              </p></li>
               {%endif%}
               {% if not request.user.is_authenticated %}
               <li><a href={% url 'register'%}>Crear usuario</a></li>
