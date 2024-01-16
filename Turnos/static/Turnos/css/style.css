@@ -116,6 +116,8 @@ li{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 50px;
+    background-color: #f1f1f1;
 }
 a:active {
     background-color: #ff0000;
@@ -130,7 +132,7 @@ a:active {
     text-align: center;
     height: 300px;
     border-radius: 20px;
-    background-color: #fff400;
+    background-color: #ededed;
     box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
 -webkit-box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
@@ -168,6 +170,10 @@ ul li{
 }
 .tabla{
     width: 800px;
+}
+
+.filtroDiv{
+    background-color: #f1f1f1;
 }
 .filtroDiv th{
     padding-left: 5px;
@@ -334,14 +340,28 @@ td a{
 }
 .eliminarReserva{
     display: flex;
-    background-color: yellow;
-    height: 100px;
-    align-items: center;
-    justify-content: center;
+    background-color: #ededed;
+    box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 42px -13px rgba(0,0,0,0.75);
+    height: 250px;
+    width: 400px;
+    align-items: flex-start;
     flex-direction: column;
-    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content:center;   
+    border-radius: 5px;
     padding: 20px;
 }
 .eliminarReserva p{
+    margin-bottom: 50px;
     font-weight:400 ;
 }
+
+
+
+
+
+
+
+

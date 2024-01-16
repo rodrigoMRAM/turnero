@@ -7,8 +7,7 @@
             <thead>
                 <tr class="topLista">
                     <th>Fecha</th>
-                    <th>Hora Inicio</th>
-                    <th>Hora Fin</th>
+                    <th>Horarios</th>
                     <th>Asignado a</th>
                     <th>Acciones</th>
                 </tr>
@@ -18,7 +17,6 @@
                 <tr>
                     <td>{{ turno.fecha }}</td>
                     <td>{{ turno.hora_inicio }}</td>
-                    <td>{{ turno.hora_fin }}</td>
                     {% if turno.asignado_a %}
                     <td>{{ turno.asignado_a.username}}</td>
                     {% else %}

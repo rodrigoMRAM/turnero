@@ -9,7 +9,8 @@
 
     <div class="eliminarReserva">
         
-        <p>Hola {{turno.asignado_a}}, tu turno es el día: {{turno.fecha}} a las {{turno.hora_inicio}} <a class="btn-red"href="{% url 'Eliminar' turno.id %}">Eliminar Reserva</a></p>
+        <p>Hola {{turno.asignado_a}}, tu turno es el día: {{turno.fecha}} a las {{turno.hora_inicio}}</p>
+        <a class="btn-red"href="{% url 'Eliminar' turno.id %}">Eliminar Reserva</a>
         
     </div>
 </div>
