@@ -4,27 +4,26 @@
 <link rel="stylesheet" href="{%static 'Turnos/css/style.css'%}">
     {% block Turnos %}
     <div class="contenedorgral">
-        <h1>Sistema de Turnos</h1>
+        <h1> Selecciona dia</h1>
 
         <div class="contenedor">
             
             <div class="botones">
                 
                 <button id="prevButton"><</button>
-                <button id="nextButton">></button>
+                <button  id="nextButton">></button>
             </div>
             <div id="calendar"></div>
         </div>
-        <div class="container mensaje"><p style="font-size: 30px">{{mensaje}}</p>
+        <div class="mensaje"><p style="font-size: 30px">{{mensaje}}</p>
             <p>
                 {{context.texto}}
             </p>
         
         </div>
+        
     </div>     
         <script src="{% static 'Turnos/js/calendario.js' %}"></script>
         
     {% endblock Turnos %}
-    {% block Asignar %}
-    {% endblock Asignar %}
     

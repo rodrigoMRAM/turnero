@@ -1,5 +1,5 @@
 
-from datetime import datetime
+from datetime import datetime ,timedelta
 from django.contrib import messages
 from django.shortcuts import render
 from django.contrib.auth.views import LoginView, LogoutView
@@ -32,128 +32,6 @@ class PanelLogin(LoginView):
 
 class PanelLogout(LogoutView):
     template_name = 'Turnos/turnos.html'
-# def day0(request):
-#     midato = Turnopedido.objects.all()
-#     context0 = Turnopedido.objects.all()[0]
-#     context1 = Turnopedido.objects.all()[1]
-#     context2 = Turnopedido.objects.all()[2]
-#     context3 = Turnopedido.objects.all()[3]
-#     context4 = Turnopedido.objects.all()[4]
-#     context5 = Turnopedido.objects.all()[5]
-#     context6 = Turnopedido.objects.all()[6]
-#     return render(request, "Turnos/dia0.html",{"datos": midato,"context0" : context0, 
-#     "context1": context1,
-#     "context2": context2,
-#     "context3": context3,
-#     "context4": context4,
-#     "context5": context5,
-#     "context6": context6})
-
-# def day1(request):
-#     context1 = Turnopedido.objects.all()[1]
-#     return render(request, "Turnos/dia1.html", {"context1" : context1})
-
-# def day2(request):
-#     context2 = Turnopedido.objects.all()[2]
-#     return render(request, "Turnos/dia2.html", {"context2" : context2})    
-
-
-# def day3(request):
-#     context3 = Turnopedido.objects.all()[3]
-#     return render(request, "Turnos/dia3.html", {"context3" : context3})
-
-# def day4(request):
-#     context4 = Turnopedido.objects.all()[4]
-#     return render(request, "Turnos/dia4.html", {"context4" : context4})
-
-# def day5(request):
-#     context5 = Turnopedido.objects.all()[5]
-#     return render(request, "Turnos/dia5.html", {"context5" : context5})
-# def day6(request):
-#     context6 = Turnopedido.objects.all()[6]
-#     return render(request, "Turnos/dia6.html", {"context6" : context6})
-
-# def day7(request):
-#     context7 = Turnopedido.objects.all()[7]
-#     return render(request, "Turnos/dia7.html", {"context7" : context7})
-
-# def day8(request):
-#     context8 = Turnopedido.objects.all()[8]
-#     return render(request, "Turnos/dia8.html", {"context8" : context8})
-# def day9(request):
-#     context9 = Turnopedido.objects.all()[9]
-#     return render(request, "Turnos/dia9.html", {"context9" : context9})
-# def day10(request):
-#     context10 = Turnopedido.objects.all()[10]
-#     return render(request, "Turnos/dia10.html", {"context10" : context10})
-# def day11(request):
-#     context11 = Turnopedido.objects.all()[11]
-#     return render(request, "Turnos/dia11.html", {"context11" : context11})
-# def day12(request):
-#     context12 = Turnopedido.objects.all()[12]
-#     return render(request, "Turnos/dia12.html", {"context12" : context12})
-# def day13(request):
-#     context13 = Turnopedido.objects.all()[13]
-#     return render(request, "Turnos/dia13.html", {"context13" : context13})
-# def day14(request):
-#     context14 = Turnopedido.objects.all()[14]
-#     return render(request, "Turnos/dia14.html", {"context14" : context14})
-# def day15(request):
-#     context15 = Turnopedido.objects.all()[15]
-#     return render(request, "Turnos/dia15.html", {"context15" : context15})
-# def day16(request):
-#     context16 = Turnopedido.objects.all()[16]
-#     return render(request, "Turnos/dia16.html", {"context16" : context16})
-# def day17(request):
-#     context17 = Turnopedido.objects.all()[17]
-#     return render(request, "Turnos/dia17.html", {"context17" : context17})
-
-# def day18(request):
-#     context18 = Turnopedido.objects.all()[18]
-#     return render(request, "Turnos/dia18.html", {"context18" : context18})
-# def day19(request):
-#     context19 = Turnopedido.objects.all()[19]
-#     return render(request, "Turnos/dia19.html", {"context19" : context19})
-# def day20(request):
-#     context20 = Turnopedido.objects.all()[20]
-#     return render(request, "Turnos/dia20.html", {"context20" : context20})
-# def day21(request):
-#     context21 = Turnopedido.objects.all()[21]
-#     return render(request, "Turnos/dia21.html", {"context21" : context21})
-# def day22(request):
-#     context22 = Turnopedido.objects.all()[22]
-#     return render(request, "Turnos/dia22.html", {"context22" : context22})
-# def day23(request):
-#     context23 = Turnopedido.objects.all()[23]
-#     return render(request, "Turnos/dia23.html", {"context23" : context23})
-# def day24(request):
-#     context24 = Turnopedido.objects.all()[24]
-#     return render(request, "Turnos/dia24.html", {"context24" : context24})
-# def day25(request):
-#     context25 = Turnopedido.objects.all()[25]
-#     return render(request, "Turnos/dia25.html", {"context25" : context25})
-# def day26(request):
-#     context26 = Turnopedido.objects.all()[26]
-#     return render(request, "Turnos/dia26.html", {"context26" : context26})
-
-# def day25(request):
-#     context25 = Turnopedido.objects.all()[25]
-#     return render(request, "Turnos/dia25.html", {"context25" : context25})
-# def day26(request):
-#     context26 = Turnopedido.objects.all()[26]
-#     return render(request, "Turnos/dia26.html", {"context26" : context26})
-# def day27(request):
-#     context27 = Turnopedido.objects.all()[27]
-#     return render(request, "Turnos/dia27.html", {"context27" : context27})
-
-    
-# def day29(request):
-#     context29 = Turnopedido.objects.all()[29]
-#     return render(request, "Turnos/dia29.html", {"context29" : context29})
-# def day28(request):
-#     context28 = Turnopedido.objects.all()[28]
-#     return render(request, "Turnos/dia28.html", {"context28" : context28})
-
 
 
 
@@ -189,23 +67,27 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def asignar_turno(request, id):
     turno = get_object_or_404(Turno, pk=id)
-    if request.method == 'POST':
-        if not turno.asignado_a:
-            turno.asignado_a = request.user
-            turno.activo = False
-            turno.save()
-            context={
-                "texto" : f"Turno {turno} asignado a {request.user.username}"
-            }
-            print(context['texto'])
-            render(request,'Turnos/asignar_turno.html', context)
-            # messages.success(request, f'Turno {turno} asignado a {request.user.username}')
+    #VERIFICANDO SI TIENE TURNOS ASIGNADOS
+    for e in Turno.objects.all():
+        if e.asignado_a == request.user:
+            return render(request,'Turnos/imposible.html' )
+        # ESTE CODIGO ASIGNA EL TURNO SI ES QUE NO POSEE UNO
         else:
-            messages.warning(request, f'El turno {turno} ya está asignado a {turno.asignado_a.username}')
-            context={
-                "texto" : "Turno {turno} asignado a {request.user.username}"
-            }
-        return render(request, 'Turnos/turnos.html', {"mensaje": "Se realizo la reserva correctamente", "context":context})
+            if request.method == 'POST':
+                if not turno.asignado_a:
+                    turno.asignado_a = request.user
+                    turno.activo = False
+                    turno.save()
+                    context={
+                        "texto" : f"Turno {turno} asignado a {request.user.username}"
+                    }
+                    render(request,'Turnos/asignar_turno.html', context)
+                else:
+                    messages.warning(request, f'El turno {turno} ya está asignado a {turno.asignado_a.username}')
+                    context={
+                        "texto" : "Turno {turno} asignado a {request.user.username}"
+                    }
+                return render(request, 'Turnos/dateSuccess.html', {"mensaje": "Se realizo la reserva correctamente", "context":context})
     return render(request, 'Turnos/asignar_turno.html', {'turno': turno})
 
 # ELIMINAR RESERVA
@@ -227,13 +109,14 @@ def eliminar_reserva(request, id):
 
 def recolectando(request, id):
     horaInicio=  Turno.objects.filter(fecha__startswith=id)
+    miTurno = Turno.objects.filter(asignado_a=request.user)
     contador = 0
     for e in Turno.objects.all():
-        print(e.asignado_a)
+        # print(e.asignado_a)
         if e.asignado_a == request.user:
+            print("la puta madre")
             contador += 1
-    print(contador)
-    return render(request ,'Turnos/filtro.html' , {"horaInicio": horaInicio, "contador": contador})
+    return render(request ,'Turnos/filtro.html' , {"horaInicio": horaInicio, "contador": contador, 'miTurno': miTurno})
 # , {"turno":turno}
 def misTurnos(request):
     miTurno = Turno.objects.filter(asignado_a=request.user)
@@ -242,14 +125,13 @@ def misTurnos(request):
 
 # CREACION MANUAL DE DIAS EN LA BASE DE DATOS
 def prueba(request):
-    fecha_inicio = datetime(2024, 1, 1)
-
-# Inicializar la fecha de fin
-    fecha_fin = datetime(2024, 12, 31)
-    fecha_formateada = fecha_inicio.strftime('%Y-%m-%d')
     lista = ["09" , "10", "12", "14"]
     dias = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
-    while fecha_inicio <= fecha_fin:
+    fecha_fin = datetime(2024, 12, 31)
+    fecha_inicio = datetime(2024, 1, 1)
+    for x in range(360):
+        hora = fecha_inicio+ timedelta(days=x)
+        fecha_formateada = hora.strftime('%Y-%m-%d')
         for x in range(4):
             h=  Turno(fecha=fecha_formateada,hora_inicio=lista[x], hora_fin="20", asignado_a=None, activo=True)
             h.save()
@@ -257,7 +139,7 @@ def prueba(request):
 
 
 
-#Usuarios
+#FUNCIONES DE Usuarios
 from django.contrib.auth.models import User
 from django.views.generic.detail import DetailView
 

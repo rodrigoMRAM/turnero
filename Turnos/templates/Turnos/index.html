@@ -6,35 +6,49 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{%static 'Turnos/css/navbar.css'%}">
+        <link rel="stylesheet" href="{%static 'Turnos/css/footer.css'%}">
+      
         <link rel="stylesheet" href="{%static 'Turnos/css/style.css'%}">
         <title>Document</title>
     </head>
     <body>
+
+      <div class="app">
         <div class="navbar">
             <div class="logo">
               <h2>Turnos</h2>
             </div>
             <ul class="links">
-              <li><a href="/">home</a></li>
+              <li>
+                <a href="{% url "Listar" %}">home</a>
+              </li>
               {% comment %} <li><a href="#">link 1</a></li> {% endcomment %}
               {% if request.user.is_authenticated %}
-              <li><a href={% url 'misTurnos'  %}>Mis turnos</a><p class="turnoReservado">
+              <li>
+                <a href="{% url 'misTurnos'  %}">Mis turnos</a>
                 {% if miTurno %}
+                <p class="turnoReservado">
                 1
-                </p>{% endif %}
-              </p></li>
+              </p>
+              {% endif %}
+              </li>
               {%endif%}
               {% if not request.user.is_authenticated %}
-              <li><a href={% url 'register'%}>Crear usuario</a></li>
+
+              <li><a href="{% url 'register'%}">Crear usuario</a></li>
               {%endif%}
             </ul>
             <div class="right">
                 {% if request.user.is_authenticated %}
-            <a class="boton" href="{% url 'panel-logout' %}">Cerrar sesión</a>
+                <form  method="post" action="{% url 'panel-logout' %}">
+                  {% csrf_token %}
+                  <button class="btn btn-primary boton" type="submit">Cerrar sesion</button>
+                </form>
+            {% comment %} <a class="boton" href="{% url 'panel-logout' %}">Cerrar sesión</a> {% endcomment %}
             {%endif%}
             
             {% if not request.user.is_authenticated %}
-            <a class="boton" href="{% url 'panel-login' %}">Iniciar sesion</a>
+            <a class="btn btn-primary boton" href="{% url 'panel-login' %}">Iniciar sesion</a>
             {%endif%}
         </div>
             <div class="toggle">
@@ -43,18 +57,40 @@
               <div class="line3"></div>
             </div>
         </div>
+        {% block success %}{% endblock success %}
         <div class="alter">
         {% block Turnos %}
         
         {% endblock Turnos %}
         {% block Asignar %}
         {% endblock Asignar %}
-        {% block Login %}{% endblock Login %}
-        
         {% block Cancelar %}
         {% endblock Cancelar %}
         {% block Lista %}{% endblock Lista %}
+        {% block Login %}{% endblock Login %}
+        
+        
+        
       </div>
+     
+    
+    
+      <footer>
+        <div class='container'>
+        <div class='row'>
+            <div class='col-md-12'>
+                <ul>
+                    <li><a href={% url "Listar" %}>Home</a></li>
+                    <li><a href='#'>Privacy</a></li>
+                    <li><a href='#'>Contact</a></li>
+                    <li><a href='#'></a></li>
+                    <p>&copy; Turnos 2024</p>
+                </ul>
+            </div>
+        </div>
+        </div>
+      </footer>
+    </div>
         <script src="{% static 'Turnos/js/navbar.js' %}"></script>
     </body>    
 </html>

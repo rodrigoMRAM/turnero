@@ -9,18 +9,24 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
 from pathlib import Path
+
+import os
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+ENVIRONMENT = env
+# print(os.environ.get('SECRET_KEY'))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r=0mduj=$md)4a$rx)ank_!b#^szs3ldv+)26x)*(wiui#j@*@'
+SECRET_KEY ='django-insecure-r=0mduj=$md)4a$rx)ank_!b#^szs3ldv+)26x)*(wiui#j@*@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,10 +84,15 @@ WSGI_APPLICATION = 'Misturnos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'turnos',
+        'USER': 'postgres',
+        'PASSWORD': 'thiago123',
+        'HOST': 'localhost', 
+        'DATABASE_PORT': '5432'
     }
 }
+
 
 
 # Password validation

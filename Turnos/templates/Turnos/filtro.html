@@ -1,7 +1,7 @@
  {% extends 'Turnos/turnos.html' %}
  {% block Lista %}
 {% load static %}
- <div class="container filtroDiv">
+ <div class="filtroDiv">
      
         <table cellspacing="0">
             <thead>
@@ -31,7 +31,7 @@
                             {% endif %}
                             {% else %}
                             {% if turno.activo %}
-                            <a class="btn"  href="{% url 'Asignar' turno.id %}">Reservar</a>
+                            <a class="btn btn-primary boton"  href="{% url 'Asignar' turno.id %}">Reservar</a>
                             {% endif %}
                             {% endif %}
                             

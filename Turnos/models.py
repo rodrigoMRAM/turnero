@@ -34,6 +34,11 @@ class Dia(models.Model):
     dia = models.CharField(max_length=10)
     horario1 = models.ForeignKey(Turno,on_delete=models.DO_NOTHING)
 
+class TurnoEnProgreso(models.Model):
+    turnoActual = models.CharField(max_length=50)
+    def __str__(self):
+        return f'{self.name}'   
+
     
 
 

@@ -37,7 +37,7 @@ class CustomAuthenticationForm(AuthenticationForm):
 from django.contrib.auth.forms import UserCreationForm
 
 class UserRegisterForm (UserCreationForm): 
-    username = forms.CharField(label="Usuario",max_length=10)
+    username = forms.CharField(label="Usuario",max_length=10, widget=forms.TextInput(attrs={'placeholder':'hola'}))
     email = forms.EmailField ()
     password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput)
     password2 = forms.CharField(label= "Repetir la contraseña", widget=forms.PasswordInput) 

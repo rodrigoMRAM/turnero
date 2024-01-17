@@ -1,0 +1,11 @@
+{% extends "Turnos/index.html" %}
+{% load static %}
+{% block success %}
+<div class="mensaje"><p style="font-size: 30px">{{mensaje}}</p>
+    <p>
+        {{context.texto}}
+    </p>
+
+</div>
+
+{% endblock success %}

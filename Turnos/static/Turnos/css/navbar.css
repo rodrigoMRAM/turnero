@@ -23,8 +23,11 @@ ul {
 .navbar {
   background: #080808;
   color: #fff;
+  position: sticky;
   padding: 15px;
   width: 100%;
+  top: 0px;
+  margin-bottom: 65px;
   height: 65px;
   display: flex;
   align-items: center;
@@ -60,21 +63,17 @@ ul {
   color: #fff;
 }
 .navbar ul.links li:hover {
-  background: #fff400;
+  background: #c7c7c7;
   cursor: pointer;
 }
 .navbar ul.links li:hover a {
   color: #080808;
 }
 .boton {
-  background: #fff400;
   outline: none;
-  color: black;
-  
   font-weight: bold;
   padding: 10px 18px;
-  border-radius: 25px;
-  border: 1px solid #e6b200;
+  border-radius: 10px;
   letter-spacing: 1px;
   text-decoration: none;
 }
@@ -119,6 +118,7 @@ section {
   .navbar .right {
     height: 0;
     overflow: hidden;
+    z-index: 50;
   }
   .toggle {
     position: absolute;
@@ -197,8 +197,10 @@ section {
     filter: blur(1px);
     opacity: 0.8;
   }
-  .navbar.sticky {
+  .navbar {
     position: fixed;
+    /* top: 0;
+    left: 0; */
     z-index: 40;
   }
 }

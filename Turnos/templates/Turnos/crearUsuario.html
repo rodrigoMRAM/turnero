@@ -7,10 +7,10 @@
         
 
 <div class="form3">
-    <form action="" method= "POST">{% csrf_token %}
+    <form class="formCreate" action="" method= "POST">{% csrf_token %}
                     {{form.as_table}}
                 <p style="color:green"><b>{{mensaje}}</b></p>
-            <button class="botoningresar boton botonCrearUsuario" type="submit">Crear Usuario</button>
+            <button class="botoningresar boton btn btn-primary botonCrearUsuario" type="submit">Crear Usuario</button>
         </form> 
         
     </div>
