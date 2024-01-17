@@ -1,19 +1,25 @@
 {% extends 'Turnos/index.html' %}
 {% load static %}
+{% block css %}
+<link rel="stylesheet" href="{%static 'Turnos/css/alter.css'%}">
+{% endblock css %}
+
 {% block Login %}
 
-<h1 class="h3 mb-3 fw-normal">Crear Usuario</h1>
 
-        
+<div class="wrap">
 
-<div class="form3">
+    <h1 class="h3 mb-3 fw-normal">Crear Usuario</h1>
+    
+    <div class="form3">
     <form class="formCreate" action="" method= "POST">{% csrf_token %}
-                    {{form.as_table}}
-                <p style="color:green"><b>{{mensaje}}</b></p>
-            <button class="botoningresar boton btn btn-primary botonCrearUsuario" type="submit">Crear Usuario</button>
-        </form> 
-        
-    </div>
+        {{form.as_table}}
+        <p style="color:green"><b>{{mensaje}}</b></p>
+        <button class="botoningresar boton btn btn-primary botonCrearUsuario" type="submit">Crear Usuario</button>
+    </form> 
+    
+</div>
 
+</div>
 
 {% endblock Login %}

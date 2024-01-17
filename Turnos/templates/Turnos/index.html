@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{%static 'Turnos/css/navbar.css'%}">
         <link rel="stylesheet" href="{%static 'Turnos/css/footer.css'%}">
-      
+        {% block css %}{% endblock css %}
         <link rel="stylesheet" href="{%static 'Turnos/css/style.css'%}">
         <title>Document</title>
     </head>
@@ -22,7 +22,7 @@
               <li>
                 <a href="{% url "Listar" %}">home</a>
               </li>
-              {% comment %} <li><a href="#">link 1</a></li> {% endcomment %}
+
               {% if request.user.is_authenticated %}
               <li>
                 <a href="{% url 'misTurnos'  %}">Mis turnos</a>
@@ -44,7 +44,6 @@
                   {% csrf_token %}
                   <button class="btn btn-primary boton" type="submit">Cerrar sesion</button>
                 </form>
-            {% comment %} <a class="boton" href="{% url 'panel-logout' %}">Cerrar sesión</a> {% endcomment %}
             {%endif%}
             
             {% if not request.user.is_authenticated %}
@@ -58,23 +57,15 @@
             </div>
         </div>
         {% block success %}{% endblock success %}
-        <div class="alter">
-        {% block Turnos %}
-        
-        {% endblock Turnos %}
-        {% block Asignar %}
-        {% endblock Asignar %}
-        {% block Cancelar %}
-        {% endblock Cancelar %}
-        {% block Lista %}{% endblock Lista %}
         {% block Login %}{% endblock Login %}
-        
-        
-        
+        <div class="alter">
+        {% block Turnos %}{% endblock Turnos %}
+        {% block Asignar %}{% endblock Asignar %}
+        {% block Cancelar %}{% endblock Cancelar %}
+        {% block Lista %}{% endblock Lista %}
       </div>
      
-    
-    
+
       <footer>
         <div class='container'>
         <div class='row'>

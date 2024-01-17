@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         {% load static %}
@@ -19,7 +19,9 @@
               <h2>Turnos</h2>
             </div>
             <ul class="links">
-
+              <li>
+                <a href="{% url "Listar" %}">home</a>
+              </li>
               {% comment %} <li><a href="#">link 1</a></li> {% endcomment %}
               {% if request.user.is_authenticated %}
               <li>
@@ -55,22 +57,27 @@
               <div class="line3"></div>
             </div>
         </div>
-        <div class="login">
-          <h1 class="ingresarh1">Ingresar Usuario</h1>
-        
-          <div class="form2">
-        
-            <form action="" method="POST">{% csrf_token %}
-              <ul>
-                  {{form.as_table}}
-          </ul>
-          <button class="boton btn btn-primary" type="submit">Entrar</button>
-        
-          </div>
-          </form>
-      </div>
-      <script src="{% static 'Turnos/js/login.js' %}"></script>
-
+        <div class="contenedorgral1">
+            <h1> Selecciona dia</h1>
+    
+            <div class="contenedor">
+                
+                <div class="botones">
+                    
+                    <button id="prevButton"><</button>
+                    <button  id="nextButton">></button>
+                </div>
+                <div id="calendar"></div>
+            </div>
+            <div class="mensaje"><p style="font-size: 30px">{{mensaje}}</p>
+                <p>
+                    {{context.texto}}
+                </p>
+            
+            </div>
+            
+        </div>     
+     
     
     
       <footer>
@@ -90,6 +97,7 @@
       </footer>
     </div>
         <script src="{% static 'Turnos/js/navbar.js' %}"></script>
+        <script src="{% static 'Turnos/js/calendario.js' %}"></script>
     </body>    
 </html>
 

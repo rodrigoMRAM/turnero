@@ -17,16 +17,12 @@ import environ
 env = environ.Env()
 environ.Env.read_env()
 ENVIRONMENT = env
-# print(os.environ.get('SECRET_KEY'))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY ='django-insecure-r=0mduj=$md)4a$rx)ank_!b#^szs3ldv+)26x)*(wiui#j@*@'
+SECRET_KEY =os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,17 +32,26 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Turnos.apps.TurnosConfig',
+]
+
+THIRD_APPS = [
     "django_flatpickr",
     'crispy_forms',
 ]
+
+LOCAL_APPS=[
+    'Turnos.apps.TurnosConfig',
+]
+
+INSTALLED_APPS= DEFAULT_APPS+THIRD_APPS+LOCAL_APPS
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -58,7 +63,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Turnos.urls'
+ROOT_URLCONF = 'Misturnos.urls'
 
 TEMPLATES = [
     {
@@ -79,17 +84,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Misturnos.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'turnos',
-        'USER': 'postgres',
-        'PASSWORD': 'thiago123',
-        'HOST': 'localhost', 
-        'DATABASE_PORT': '5432'
+        'NAME': os.environ.get('NAME'),
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD'),
+        'HOST': os.environ.get('HOST'), 
+        'DATABASE_PORT': os.environ.get('DATABASE_PORT')
     }
 }
 
