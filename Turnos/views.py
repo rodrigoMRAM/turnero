@@ -81,7 +81,6 @@ def recolectando(request, id):
     contador = 0
     for e in Turno.objects.all():
         if e.asignado_a == request.user:
-            print("la puta madre")
             contador += 1
     return render(request ,'Turnos/filtro.html' , {"horaInicio": horaInicio, "contador": contador, 'miTurno': miTurno})
 
